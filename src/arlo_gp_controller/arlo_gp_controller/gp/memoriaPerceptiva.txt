@@ -1,2 +1,3 @@
-Brazo,BumperPalma=0
-Brazo,BumperAntebrazo=0
+Robot,SensorFrente=15
+Robot,SensorDerecho=29
+Robot,SensorIzquierdo=2

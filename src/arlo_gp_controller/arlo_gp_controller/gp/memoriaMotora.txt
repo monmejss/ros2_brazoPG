@@ -1,3 +1,5 @@
-Brazo,GirarDerecha=3
-Brazo,GirarIzquierda=4
-Brazo,Parar=5
+Robot,Parar=4,0.0,0.0
+Robot,Avanzar1=5,0.4,0.0
+Robot,Avanzar2=6,0.5,0.0
+Robot,Avanzar3=7,0.7,0.0
+Robot,Vuelta=8,TURNLEFT

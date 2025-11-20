@@ -1,3 +1,3 @@
-Brazo,d1=0.5
-Brazo,d2=1.2
-Brazo,d3=2
+Robot,d1=0.5
+Robot,d2=1.0
+Robot,d3=2.0
