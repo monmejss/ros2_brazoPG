@@ -1,0 +1,3 @@
+Brazo,GirarDerecha=3
+Brazo,GirarIzquierda=4
+Brazo,Parar=5

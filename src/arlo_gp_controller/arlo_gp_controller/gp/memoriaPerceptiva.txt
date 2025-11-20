@@ -1,0 +1,2 @@
+Brazo,BumperPalma=0
+Brazo,BumperAntebrazo=0

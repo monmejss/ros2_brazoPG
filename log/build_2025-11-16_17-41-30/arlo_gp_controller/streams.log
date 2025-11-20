@@ -1,0 +1,26 @@
+[4.446s] Invoking command in '/home/monica/ros2_brazoPG/src/arlo_gp_controller': PYTHONPATH=/home/monica/ros2_brazoPG/build/arlo_gp_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/arlo_gp_controller build --build-base /home/monica/ros2_brazoPG/build/arlo_gp_controller/build install --record /home/monica/ros2_brazoPG/build/arlo_gp_controller/install.log --single-version-externally-managed install_data
+[6.462s] running egg_info
+[6.469s] writing ../../build/arlo_gp_controller/arlo_gp_controller.egg-info/PKG-INFO
+[6.473s] writing dependency_links to ../../build/arlo_gp_controller/arlo_gp_controller.egg-info/dependency_links.txt
+[6.473s] writing entry points to ../../build/arlo_gp_controller/arlo_gp_controller.egg-info/entry_points.txt
+[6.473s] writing requirements to ../../build/arlo_gp_controller/arlo_gp_controller.egg-info/requires.txt
+[6.473s] writing top-level names to ../../build/arlo_gp_controller/arlo_gp_controller.egg-info/top_level.txt
+[6.494s] reading manifest file '../../build/arlo_gp_controller/arlo_gp_controller.egg-info/SOURCES.txt'
+[6.494s] adding license file 'LICENSE'
+[6.502s] writing manifest file '../../build/arlo_gp_controller/arlo_gp_controller.egg-info/SOURCES.txt'
+[6.502s] running build
+[6.502s] running build_py
+[6.514s] running install
+[6.514s] running install_lib
+[6.529s] running install_data
+[6.531s] running install_egg_info
+[6.548s] removing '/home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/python3.10/site-packages/arlo_gp_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[6.548s] Copying ../../build/arlo_gp_controller/arlo_gp_controller.egg-info to /home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/python3.10/site-packages/arlo_gp_controller-0.0.0-py3.10.egg-info
+[6.566s] running install_scripts
+[6.700s] Installing corriente_dorsal script to /home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/arlo_gp_controller
+[6.702s] Installing cortezaParietal script to /home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/arlo_gp_controller
+[6.702s] Installing cortezaSomatosensorial script to /home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/arlo_gp_controller
+[6.707s] Installing main script to /home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/arlo_gp_controller
+[6.707s] Installing runBest script to /home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/arlo_gp_controller
+[6.708s] writing list of installed files to '/home/monica/ros2_brazoPG/build/arlo_gp_controller/install.log'
+[6.886s] Invoked command in '/home/monica/ros2_brazoPG/src/arlo_gp_controller' returned '0': PYTHONPATH=/home/monica/ros2_brazoPG/build/arlo_gp_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/arlo_gp_controller build --build-base /home/monica/ros2_brazoPG/build/arlo_gp_controller/build install --record /home/monica/ros2_brazoPG/build/arlo_gp_controller/install.log --single-version-externally-managed install_data

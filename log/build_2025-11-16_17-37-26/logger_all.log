@@ -1,0 +1,369 @@
+[0.831s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.831s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=2, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7c849245f130>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7c849245ec50>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7c849245ec50>>, mixin_verb=('build',))
+[1.750s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.750s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.750s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.750s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.750s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.750s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.750s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/monica/ros2_brazoPG'
+[1.751s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.751s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.751s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.751s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.751s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.751s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.751s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.751s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.752s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.794s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.794s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.794s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.794s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.794s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.795s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.795s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.795s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.795s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.796s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.796s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.796s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.796s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.796s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.796s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[1.796s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[1.797s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[1.797s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[1.797s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[1.797s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[1.797s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[1.797s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[1.797s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[1.797s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[1.797s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[1.798s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[1.798s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[1.798s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[1.798s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_gp_controller) by extensions ['ignore', 'ignore_ament_install']
+[1.798s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_gp_controller) by extension 'ignore'
+[1.798s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_gp_controller) by extension 'ignore_ament_install'
+[1.799s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_gp_controller) by extensions ['colcon_pkg']
+[1.799s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_gp_controller) by extension 'colcon_pkg'
+[1.799s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_gp_controller) by extensions ['colcon_meta']
+[1.799s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_gp_controller) by extension 'colcon_meta'
+[1.799s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_gp_controller) by extensions ['ros']
+[1.799s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_gp_controller) by extension 'ros'
+[1.810s] DEBUG:colcon.colcon_core.package_identification:Package 'src/arlo_gp_controller' with type 'ros.ament_python' and name 'arlo_gp_controller'
+[1.811s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[1.811s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_interfaces) by extension 'ignore'
+[1.811s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_interfaces) by extension 'ignore_ament_install'
+[1.811s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_interfaces) by extensions ['colcon_pkg']
+[1.811s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_interfaces) by extension 'colcon_pkg'
+[1.811s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_interfaces) by extensions ['colcon_meta']
+[1.811s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_interfaces) by extension 'colcon_meta'
+[1.811s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_interfaces) by extensions ['ros']
+[1.812s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_interfaces) by extension 'ros'
+[1.813s] DEBUG:colcon.colcon_core.package_identification:Package 'src/arlo_interfaces' with type 'ros.ament_cmake' and name 'arlo_interfaces'
+[1.813s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extensions ['ignore', 'ignore_ament_install']
+[1.813s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extension 'ignore'
+[1.814s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extension 'ignore_ament_install'
+[1.814s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extensions ['colcon_pkg']
+[1.814s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extension 'colcon_pkg'
+[1.814s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extensions ['colcon_meta']
+[1.814s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extension 'colcon_meta'
+[1.814s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extensions ['ros']
+[1.814s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extension 'ros'
+[1.814s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extensions ['cmake', 'python']
+[1.815s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extension 'cmake'
+[1.815s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extension 'python'
+[1.815s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extensions ['python_setup_py']
+[1.815s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas) by extension 'python_setup_py'
+[1.815s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas/arlo_mejorado) by extensions ['ignore', 'ignore_ament_install']
+[1.815s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas/arlo_mejorado) by extension 'ignore'
+[1.815s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas/arlo_mejorado) by extension 'ignore_ament_install'
+[1.816s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas/arlo_mejorado) by extensions ['colcon_pkg']
+[1.816s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas/arlo_mejorado) by extension 'colcon_pkg'
+[1.816s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas/arlo_mejorado) by extensions ['colcon_meta']
+[1.816s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas/arlo_mejorado) by extension 'colcon_meta'
+[1.816s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas/arlo_mejorado) by extensions ['ros']
+[1.816s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_mejorado_precision_llantas/arlo_mejorado) by extension 'ros'
+[1.819s] DEBUG:colcon.colcon_core.package_identification:Package 'src/arlo_mejorado_precision_llantas/arlo_mejorado' with type 'ros.ament_cmake' and name 'arlo_mejorado'
+[1.820s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_nn_controller) by extensions ['ignore', 'ignore_ament_install']
+[1.820s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_nn_controller) by extension 'ignore'
+[1.820s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_nn_controller) by extension 'ignore_ament_install'
+[1.820s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_nn_controller) by extensions ['colcon_pkg']
+[1.820s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_nn_controller) by extension 'colcon_pkg'
+[1.820s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_nn_controller) by extensions ['colcon_meta']
+[1.821s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_nn_controller) by extension 'colcon_meta'
+[1.821s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_nn_controller) by extensions ['ros']
+[1.821s] Level 1:colcon.colcon_core.package_identification:_identify(src/arlo_nn_controller) by extension 'ros'
+[1.846s] DEBUG:colcon.colcon_core.package_identification:Package 'src/arlo_nn_controller' with type 'ros.ament_cmake' and name 'arlo_nn_controller'
+[1.846s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.847s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.847s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.847s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.847s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.926s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.926s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.946s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 7 installed packages in /home/monica/ros2_ws/install
+[1.952s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 355 installed packages in /opt/ros/iron
+[1.957s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[2.138s] Level 5:colcon.colcon_core.verb:set package 'arlo_gp_controller' build argument 'cmake_args' from command line to 'None'
+[2.138s] Level 5:colcon.colcon_core.verb:set package 'arlo_gp_controller' build argument 'cmake_target' from command line to 'None'
+[2.138s] Level 5:colcon.colcon_core.verb:set package 'arlo_gp_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.138s] Level 5:colcon.colcon_core.verb:set package 'arlo_gp_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[2.138s] Level 5:colcon.colcon_core.verb:set package 'arlo_gp_controller' build argument 'cmake_clean_first' from command line to 'False'
+[2.138s] Level 5:colcon.colcon_core.verb:set package 'arlo_gp_controller' build argument 'cmake_force_configure' from command line to 'False'
+[2.139s] Level 5:colcon.colcon_core.verb:set package 'arlo_gp_controller' build argument 'ament_cmake_args' from command line to 'None'
+[2.139s] Level 5:colcon.colcon_core.verb:set package 'arlo_gp_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[2.139s] Level 5:colcon.colcon_core.verb:set package 'arlo_gp_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.139s] DEBUG:colcon.colcon_core.verb:Building package 'arlo_gp_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/monica/ros2_brazoPG/build/arlo_gp_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/monica/ros2_brazoPG/install/arlo_gp_controller', 'merge_install': False, 'path': '/home/monica/ros2_brazoPG/src/arlo_gp_controller', 'symlink_install': False, 'test_result_base': None}
+[2.140s] Level 5:colcon.colcon_core.verb:set package 'arlo_interfaces' build argument 'cmake_args' from command line to 'None'
+[2.140s] Level 5:colcon.colcon_core.verb:set package 'arlo_interfaces' build argument 'cmake_target' from command line to 'None'
+[2.140s] Level 5:colcon.colcon_core.verb:set package 'arlo_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.140s] Level 5:colcon.colcon_core.verb:set package 'arlo_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[2.140s] Level 5:colcon.colcon_core.verb:set package 'arlo_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[2.140s] Level 5:colcon.colcon_core.verb:set package 'arlo_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[2.140s] Level 5:colcon.colcon_core.verb:set package 'arlo_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[2.140s] Level 5:colcon.colcon_core.verb:set package 'arlo_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[2.140s] Level 5:colcon.colcon_core.verb:set package 'arlo_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.140s] DEBUG:colcon.colcon_core.verb:Building package 'arlo_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/monica/ros2_brazoPG/build/arlo_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/monica/ros2_brazoPG/install/arlo_interfaces', 'merge_install': False, 'path': '/home/monica/ros2_brazoPG/src/arlo_interfaces', 'symlink_install': False, 'test_result_base': None}
+[2.141s] Level 5:colcon.colcon_core.verb:set package 'arlo_mejorado' build argument 'cmake_args' from command line to 'None'
+[2.141s] Level 5:colcon.colcon_core.verb:set package 'arlo_mejorado' build argument 'cmake_target' from command line to 'None'
+[2.141s] Level 5:colcon.colcon_core.verb:set package 'arlo_mejorado' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.141s] Level 5:colcon.colcon_core.verb:set package 'arlo_mejorado' build argument 'cmake_clean_cache' from command line to 'False'
+[2.141s] Level 5:colcon.colcon_core.verb:set package 'arlo_mejorado' build argument 'cmake_clean_first' from command line to 'False'
+[2.141s] Level 5:colcon.colcon_core.verb:set package 'arlo_mejorado' build argument 'cmake_force_configure' from command line to 'False'
+[2.141s] Level 5:colcon.colcon_core.verb:set package 'arlo_mejorado' build argument 'ament_cmake_args' from command line to 'None'
+[2.142s] Level 5:colcon.colcon_core.verb:set package 'arlo_mejorado' build argument 'catkin_cmake_args' from command line to 'None'
+[2.142s] Level 5:colcon.colcon_core.verb:set package 'arlo_mejorado' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.142s] DEBUG:colcon.colcon_core.verb:Building package 'arlo_mejorado' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/monica/ros2_brazoPG/build/arlo_mejorado', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/monica/ros2_brazoPG/install/arlo_mejorado', 'merge_install': False, 'path': '/home/monica/ros2_brazoPG/src/arlo_mejorado_precision_llantas/arlo_mejorado', 'symlink_install': False, 'test_result_base': None}
+[2.142s] Level 5:colcon.colcon_core.verb:set package 'arlo_nn_controller' build argument 'cmake_args' from command line to 'None'
+[2.143s] Level 5:colcon.colcon_core.verb:set package 'arlo_nn_controller' build argument 'cmake_target' from command line to 'None'
+[2.143s] Level 5:colcon.colcon_core.verb:set package 'arlo_nn_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.143s] Level 5:colcon.colcon_core.verb:set package 'arlo_nn_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[2.143s] Level 5:colcon.colcon_core.verb:set package 'arlo_nn_controller' build argument 'cmake_clean_first' from command line to 'False'
+[2.143s] Level 5:colcon.colcon_core.verb:set package 'arlo_nn_controller' build argument 'cmake_force_configure' from command line to 'False'
+[2.143s] Level 5:colcon.colcon_core.verb:set package 'arlo_nn_controller' build argument 'ament_cmake_args' from command line to 'None'
+[2.143s] Level 5:colcon.colcon_core.verb:set package 'arlo_nn_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[2.143s] Level 5:colcon.colcon_core.verb:set package 'arlo_nn_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.143s] DEBUG:colcon.colcon_core.verb:Building package 'arlo_nn_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/monica/ros2_brazoPG/build/arlo_nn_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/monica/ros2_brazoPG/install/arlo_nn_controller', 'merge_install': False, 'path': '/home/monica/ros2_brazoPG/src/arlo_nn_controller', 'symlink_install': False, 'test_result_base': None}
+[2.143s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.145s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.146s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/monica/ros2_brazoPG/src/arlo_interfaces' with build type 'ament_cmake'
+[2.146s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/monica/ros2_brazoPG/src/arlo_interfaces'
+[2.178s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.178s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.178s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.193s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/monica/ros2_brazoPG/src/arlo_gp_controller' with build type 'ament_python'
+[2.193s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_gp_controller', 'ament_prefix_path')
+[2.194s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_gp_controller/share/arlo_gp_controller/hook/ament_prefix_path.ps1'
+[2.198s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_gp_controller/share/arlo_gp_controller/hook/ament_prefix_path.dsv'
+[2.199s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_gp_controller/share/arlo_gp_controller/hook/ament_prefix_path.sh'
+[2.201s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.201s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.220s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/monica/ros2_brazoPG/build/arlo_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake /home/monica/ros2_brazoPG/src/arlo_interfaces -DCMAKE_INSTALL_PREFIX=/home/monica/ros2_brazoPG/install/arlo_interfaces
+[2.997s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/monica/ros2_brazoPG/src/arlo_gp_controller'
+[2.998s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.998s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.248s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/monica/ros2_brazoPG/src/arlo_gp_controller': PYTHONPATH=/home/monica/ros2_brazoPG/build/arlo_gp_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/arlo_gp_controller build --build-base /home/monica/ros2_brazoPG/build/arlo_gp_controller/build install --record /home/monica/ros2_brazoPG/build/arlo_gp_controller/install.log --single-version-externally-managed install_data
+[5.125s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/monica/ros2_brazoPG/src/arlo_gp_controller' returned '0': PYTHONPATH=/home/monica/ros2_brazoPG/build/arlo_gp_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/arlo_gp_controller build --build-base /home/monica/ros2_brazoPG/build/arlo_gp_controller/build install --record /home/monica/ros2_brazoPG/build/arlo_gp_controller/install.log --single-version-externally-managed install_data
+[5.134s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_gp_controller' for CMake module files
+[5.135s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_gp_controller' for CMake config files
+[5.137s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_gp_controller/lib'
+[5.137s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_gp_controller/bin'
+[5.137s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/pkgconfig/arlo_gp_controller.pc'
+[5.138s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_gp_controller/lib/python3.10/site-packages'
+[5.138s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_gp_controller', 'pythonpath')
+[5.138s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_gp_controller/share/arlo_gp_controller/hook/pythonpath.ps1'
+[5.139s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_gp_controller/share/arlo_gp_controller/hook/pythonpath.dsv'
+[5.140s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_gp_controller/share/arlo_gp_controller/hook/pythonpath.sh'
+[5.141s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_gp_controller/bin'
+[5.141s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arlo_gp_controller)
+[5.142s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_gp_controller/share/arlo_gp_controller/package.ps1'
+[5.144s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/monica/ros2_brazoPG/install/arlo_gp_controller/share/arlo_gp_controller/package.dsv'
+[5.146s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_gp_controller/share/arlo_gp_controller/package.sh'
+[5.147s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_gp_controller/share/arlo_gp_controller/package.bash'
+[5.149s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_gp_controller/share/arlo_gp_controller/package.zsh'
+[5.151s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/monica/ros2_brazoPG/install/arlo_gp_controller/share/colcon-core/packages/arlo_gp_controller)
+[5.153s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/monica/ros2_brazoPG/src/arlo_mejorado_precision_llantas/arlo_mejorado' with build type 'ament_cmake'
+[5.153s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/monica/ros2_brazoPG/src/arlo_mejorado_precision_llantas/arlo_mejorado'
+[5.154s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.154s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.181s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/monica/ros2_brazoPG/build/arlo_mejorado': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake /home/monica/ros2_brazoPG/src/arlo_mejorado_precision_llantas/arlo_mejorado -DCMAKE_INSTALL_PREFIX=/home/monica/ros2_brazoPG/install/arlo_mejorado
+[7.735s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/monica/ros2_brazoPG/build/arlo_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake /home/monica/ros2_brazoPG/src/arlo_interfaces -DCMAKE_INSTALL_PREFIX=/home/monica/ros2_brazoPG/install/arlo_interfaces
+[7.740s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/monica/ros2_brazoPG/build/arlo_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake --build /home/monica/ros2_brazoPG/build/arlo_interfaces -- -j2 -l2
+[25.218s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/monica/ros2_brazoPG/build/arlo_mejorado' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake /home/monica/ros2_brazoPG/src/arlo_mejorado_precision_llantas/arlo_mejorado -DCMAKE_INSTALL_PREFIX=/home/monica/ros2_brazoPG/install/arlo_mejorado
+[25.221s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/monica/ros2_brazoPG/build/arlo_mejorado': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake --build /home/monica/ros2_brazoPG/build/arlo_mejorado -- -j2 -l2
+[25.754s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/monica/ros2_brazoPG/build/arlo_mejorado' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake --build /home/monica/ros2_brazoPG/build/arlo_mejorado -- -j2 -l2
+[25.838s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/monica/ros2_brazoPG/build/arlo_mejorado': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake --install /home/monica/ros2_brazoPG/build/arlo_mejorado
+[35.166s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arlo_mejorado)
+[35.168s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/monica/ros2_brazoPG/build/arlo_mejorado' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake --install /home/monica/ros2_brazoPG/build/arlo_mejorado
+[35.170s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_mejorado' for CMake module files
+[35.172s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_mejorado' for CMake config files
+[35.173s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_mejorado', 'cmake_prefix_path')
+[35.174s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/hook/cmake_prefix_path.ps1'
+[35.175s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/hook/cmake_prefix_path.dsv'
+[35.177s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/hook/cmake_prefix_path.sh'
+[35.178s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_mejorado/bin'
+[35.178s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_mejorado/lib/pkgconfig/arlo_mejorado.pc'
+[35.179s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_mejorado/lib/python3.10/site-packages'
+[35.180s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_mejorado/bin'
+[35.181s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/package.ps1'
+[35.182s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/package.dsv'
+[35.189s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/package.sh'
+[35.192s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/package.bash'
+[35.193s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/package.zsh'
+[35.195s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/monica/ros2_brazoPG/install/arlo_mejorado/share/colcon-core/packages/arlo_mejorado)
+[35.197s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arlo_mejorado)
+[35.198s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_mejorado' for CMake module files
+[35.200s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_mejorado' for CMake config files
+[35.201s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_mejorado', 'cmake_prefix_path')
+[35.201s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/hook/cmake_prefix_path.ps1'
+[35.203s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/hook/cmake_prefix_path.dsv'
+[35.203s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/hook/cmake_prefix_path.sh'
+[35.205s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_mejorado/bin'
+[35.205s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_mejorado/lib/pkgconfig/arlo_mejorado.pc'
+[35.206s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_mejorado/lib/python3.10/site-packages'
+[35.206s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_mejorado/bin'
+[35.207s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/package.ps1'
+[35.208s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/package.dsv'
+[35.210s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/package.sh'
+[35.211s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/package.bash'
+[35.212s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/package.zsh'
+[35.213s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/monica/ros2_brazoPG/install/arlo_mejorado/share/colcon-core/packages/arlo_mejorado)
+[38.622s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/monica/ros2_brazoPG/build/arlo_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake --build /home/monica/ros2_brazoPG/build/arlo_interfaces -- -j2 -l2
+[38.626s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/monica/ros2_brazoPG/build/arlo_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake --install /home/monica/ros2_brazoPG/build/arlo_interfaces
+[38.882s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arlo_interfaces)
+[38.883s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces' for CMake module files
+[38.885s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/monica/ros2_brazoPG/build/arlo_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake --install /home/monica/ros2_brazoPG/build/arlo_interfaces
+[38.887s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces' for CMake config files
+[38.889s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_interfaces', 'cmake_prefix_path')
+[38.889s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/cmake_prefix_path.ps1'
+[38.890s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/cmake_prefix_path.dsv'
+[38.891s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/cmake_prefix_path.sh'
+[38.892s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces/lib'
+[38.893s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_interfaces', 'ld_library_path_lib')
+[38.893s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/ld_library_path_lib.ps1'
+[38.894s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/ld_library_path_lib.dsv'
+[38.895s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/ld_library_path_lib.sh'
+[38.895s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces/bin'
+[38.896s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces/lib/pkgconfig/arlo_interfaces.pc'
+[38.896s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces/lib/python3.10/site-packages'
+[38.896s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_interfaces', 'pythonpath')
+[38.897s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/pythonpath.ps1'
+[38.898s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/pythonpath.dsv'
+[38.898s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/pythonpath.sh'
+[38.899s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces/bin'
+[38.900s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/package.ps1'
+[38.903s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/package.dsv'
+[38.904s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/package.sh'
+[38.906s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/package.bash'
+[38.907s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/package.zsh'
+[38.908s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/monica/ros2_brazoPG/install/arlo_interfaces/share/colcon-core/packages/arlo_interfaces)
+[38.910s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arlo_interfaces)
+[38.910s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces' for CMake module files
+[38.913s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces' for CMake config files
+[38.915s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_interfaces', 'cmake_prefix_path')
+[38.915s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/cmake_prefix_path.ps1'
+[38.916s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/cmake_prefix_path.dsv'
+[38.917s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/cmake_prefix_path.sh'
+[38.918s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces/lib'
+[38.918s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_interfaces', 'ld_library_path_lib')
+[38.919s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/ld_library_path_lib.ps1'
+[38.919s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/ld_library_path_lib.dsv'
+[38.920s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/ld_library_path_lib.sh'
+[38.921s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces/bin'
+[38.921s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces/lib/pkgconfig/arlo_interfaces.pc'
+[38.922s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces/lib/python3.10/site-packages'
+[38.922s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_interfaces', 'pythonpath')
+[38.922s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/pythonpath.ps1'
+[38.923s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/pythonpath.dsv'
+[38.924s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/hook/pythonpath.sh'
+[38.925s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_interfaces/bin'
+[38.926s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/package.ps1'
+[38.927s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/package.dsv'
+[38.929s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/package.sh'
+[38.930s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/package.bash'
+[38.931s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_interfaces/share/arlo_interfaces/package.zsh'
+[38.932s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/monica/ros2_brazoPG/install/arlo_interfaces/share/colcon-core/packages/arlo_interfaces)
+[38.933s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/monica/ros2_brazoPG/src/arlo_nn_controller' with build type 'ament_cmake'
+[38.933s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/monica/ros2_brazoPG/src/arlo_nn_controller'
+[38.934s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[38.934s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[38.966s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/monica/ros2_brazoPG/build/arlo_nn_controller': AMENT_PREFIX_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces:/home/monica/ros2_ws/install/xolobot_control:/home/monica/ros2_ws/install/xolobot_arm_server:/home/monica/ros2_ws/install/xolobot_arm:/home/monica/ros2_ws/install/ros2_linkattacher:/home/monica/ros2_ws/install/mod_interfaces:/home/monica/ros2_ws/install/linkattacher_msgs:/home/monica/ros2_ws/install/modulos:/opt/ros/iron LD_LIBRARY_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/monica/ros2_brazoPG/install/arlo_interfaces/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /home/monica/ros2_brazoPG/src/arlo_nn_controller -DCMAKE_INSTALL_PREFIX=/home/monica/ros2_brazoPG/install/arlo_nn_controller
+[46.717s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/monica/ros2_brazoPG/build/arlo_nn_controller' returned '0': AMENT_PREFIX_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces:/home/monica/ros2_ws/install/xolobot_control:/home/monica/ros2_ws/install/xolobot_arm_server:/home/monica/ros2_ws/install/xolobot_arm:/home/monica/ros2_ws/install/ros2_linkattacher:/home/monica/ros2_ws/install/mod_interfaces:/home/monica/ros2_ws/install/linkattacher_msgs:/home/monica/ros2_ws/install/modulos:/opt/ros/iron LD_LIBRARY_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/monica/ros2_brazoPG/install/arlo_interfaces/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /home/monica/ros2_brazoPG/src/arlo_nn_controller -DCMAKE_INSTALL_PREFIX=/home/monica/ros2_brazoPG/install/arlo_nn_controller
+[46.720s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/monica/ros2_brazoPG/build/arlo_nn_controller': AMENT_PREFIX_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces:/home/monica/ros2_ws/install/xolobot_control:/home/monica/ros2_ws/install/xolobot_arm_server:/home/monica/ros2_ws/install/xolobot_arm:/home/monica/ros2_ws/install/ros2_linkattacher:/home/monica/ros2_ws/install/mod_interfaces:/home/monica/ros2_ws/install/linkattacher_msgs:/home/monica/ros2_ws/install/modulos:/opt/ros/iron LD_LIBRARY_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/monica/ros2_brazoPG/install/arlo_interfaces/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/monica/ros2_brazoPG/build/arlo_nn_controller -- -j2 -l2
+[161.436s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/monica/ros2_brazoPG/build/arlo_nn_controller' returned '0': AMENT_PREFIX_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces:/home/monica/ros2_ws/install/xolobot_control:/home/monica/ros2_ws/install/xolobot_arm_server:/home/monica/ros2_ws/install/xolobot_arm:/home/monica/ros2_ws/install/ros2_linkattacher:/home/monica/ros2_ws/install/mod_interfaces:/home/monica/ros2_ws/install/linkattacher_msgs:/home/monica/ros2_ws/install/modulos:/opt/ros/iron LD_LIBRARY_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/monica/ros2_brazoPG/install/arlo_interfaces/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/monica/ros2_brazoPG/build/arlo_nn_controller -- -j2 -l2
+[161.440s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/monica/ros2_brazoPG/build/arlo_nn_controller': AMENT_PREFIX_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces:/home/monica/ros2_ws/install/xolobot_control:/home/monica/ros2_ws/install/xolobot_arm_server:/home/monica/ros2_ws/install/xolobot_arm:/home/monica/ros2_ws/install/ros2_linkattacher:/home/monica/ros2_ws/install/mod_interfaces:/home/monica/ros2_ws/install/linkattacher_msgs:/home/monica/ros2_ws/install/modulos:/opt/ros/iron LD_LIBRARY_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/monica/ros2_brazoPG/install/arlo_interfaces/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/monica/ros2_brazoPG/build/arlo_nn_controller
+[161.778s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arlo_nn_controller)
+[161.779s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller' for CMake module files
+[161.780s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/monica/ros2_brazoPG/build/arlo_nn_controller' returned '0': AMENT_PREFIX_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces:/home/monica/ros2_ws/install/xolobot_control:/home/monica/ros2_ws/install/xolobot_arm_server:/home/monica/ros2_ws/install/xolobot_arm:/home/monica/ros2_ws/install/ros2_linkattacher:/home/monica/ros2_ws/install/mod_interfaces:/home/monica/ros2_ws/install/linkattacher_msgs:/home/monica/ros2_ws/install/modulos:/opt/ros/iron LD_LIBRARY_PATH=/home/monica/ros2_brazoPG/install/arlo_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/monica/ros2_brazoPG/install/arlo_interfaces/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/monica/ros2_brazoPG/build/arlo_nn_controller
+[161.782s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller' for CMake config files
+[161.784s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_nn_controller', 'cmake_prefix_path')
+[161.785s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/cmake_prefix_path.ps1'
+[161.786s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/cmake_prefix_path.dsv'
+[161.786s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/cmake_prefix_path.sh'
+[161.787s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller/lib'
+[161.788s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_nn_controller', 'ld_library_path_lib')
+[161.788s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/ld_library_path_lib.ps1'
+[161.789s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/ld_library_path_lib.dsv'
+[161.790s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/ld_library_path_lib.sh'
+[161.791s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller/bin'
+[161.791s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller/lib/pkgconfig/arlo_nn_controller.pc'
+[161.791s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller/lib/python3.10/site-packages'
+[161.791s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_nn_controller', 'pythonpath')
+[161.792s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/pythonpath.ps1'
+[161.793s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/pythonpath.dsv'
+[161.793s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/pythonpath.sh'
+[161.795s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller/bin'
+[161.795s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/package.ps1'
+[161.797s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/package.dsv'
+[161.799s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/package.sh'
+[161.800s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/package.bash'
+[161.801s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/package.zsh'
+[161.802s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/colcon-core/packages/arlo_nn_controller)
+[161.804s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arlo_nn_controller)
+[161.804s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller' for CMake module files
+[161.807s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller' for CMake config files
+[161.809s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_nn_controller', 'cmake_prefix_path')
+[161.810s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/cmake_prefix_path.ps1'
+[161.811s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/cmake_prefix_path.dsv'
+[161.812s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/cmake_prefix_path.sh'
+[161.813s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller/lib'
+[161.813s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_nn_controller', 'ld_library_path_lib')
+[161.814s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/ld_library_path_lib.ps1'
+[161.814s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/ld_library_path_lib.dsv'
+[161.815s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/ld_library_path_lib.sh'
+[161.816s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller/bin'
+[161.816s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller/lib/pkgconfig/arlo_nn_controller.pc'
+[161.817s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller/lib/python3.10/site-packages'
+[161.817s] Level 1:colcon.colcon_core.shell:create_environment_hook('arlo_nn_controller', 'pythonpath')
+[161.817s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/pythonpath.ps1'
+[161.818s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/pythonpath.dsv'
+[161.819s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/hook/pythonpath.sh'
+[161.820s] Level 1:colcon.colcon_core.environment:checking '/home/monica/ros2_brazoPG/install/arlo_nn_controller/bin'
+[161.821s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/package.ps1'
+[161.823s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/package.dsv'
+[161.824s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/package.sh'
+[161.825s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/package.bash'
+[161.827s] INFO:colcon.colcon_core.shell:Creating package script '/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/arlo_nn_controller/package.zsh'
+[161.828s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/monica/ros2_brazoPG/install/arlo_nn_controller/share/colcon-core/packages/arlo_nn_controller)
+[161.828s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[161.829s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[161.829s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[161.829s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[161.863s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[161.863s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[161.863s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[162.138s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[162.138s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/monica/ros2_brazoPG/install/local_setup.ps1'
+[162.142s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/monica/ros2_brazoPG/install/_local_setup_util_ps1.py'
+[162.147s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/monica/ros2_brazoPG/install/setup.ps1'
+[162.156s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/monica/ros2_brazoPG/install/local_setup.sh'
+[162.158s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/monica/ros2_brazoPG/install/_local_setup_util_sh.py'
+[162.160s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/monica/ros2_brazoPG/install/setup.sh'
+[162.163s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/monica/ros2_brazoPG/install/local_setup.bash'
+[162.165s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/monica/ros2_brazoPG/install/setup.bash'
+[162.169s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/monica/ros2_brazoPG/install/local_setup.zsh'
+[162.171s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/monica/ros2_brazoPG/install/setup.zsh'

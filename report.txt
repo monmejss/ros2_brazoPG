@@ -1,0 +1,16 @@
+{
+{popSize: 2,
+generations: 2,
+treeDepth: 3,
+treeType: full,
+mutationProbability: 0.1},
+[
+,{
+bestAptitud: 0.055348023266832115,
+averageAptitud: 0.0553206630352283
+}
+,{
+bestAptitud: 0.05538285313460389,
+averageAptitud: 0.05538285313460389
+}
+]}

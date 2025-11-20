@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>arlo_mejorado</name>
+  <version>1.0.0</version>
+  <description>An example of how to build a differential drive in Gazebo with ROS 2 support</description>
+
+  <maintainer email="tonio.jaimes@gmail.com">Antonio</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>gazebo_ros</depend>
+  <depend>controller_manager</depend>
+  <depend>ros2_controllers</depend>
+  <depend>control_msgs</depend>
+  
+  <!--Aqui hay dos mas en el del brazo pero segun yo no se deben de poner. Si falla CHECAR-->
+  <depend>geometry_msgs</depend>   
+  <depend>gazebo_msgs</depend> 
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

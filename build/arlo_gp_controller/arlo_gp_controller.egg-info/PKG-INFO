@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: arlo-gp-controller
+Version: 0.0.0
+Summary: Controlador genético de Arlo en ROS 2 con nodos Python y C++
+Home-page: UNKNOWN
+Maintainer: monica
+Maintainer-email: mbetsabe02@gmail.com
+License: Apache-2.0
+Platform: UNKNOWN
+License-File: LICENSE
+
+UNKNOWN
+

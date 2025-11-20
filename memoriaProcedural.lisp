@@ -1,0 +1,1 @@
+(SiOtro (== Robot,SensorIzquierdo Robot,SensorIzquierdo) (SiOtro (<= Robot,SensorIzquierdo Robot,SensorIzquierdo) (SiOtro (== Robot,d1 Robot,SensorIzquierdo) Robot,Avanzar1 Robot,Vuelta) (SiOtro (<= Robot,SensorDerecho Robot,SensorDerecho) Robot,Avanzar1 Robot,Parar)) (SiOtro (== Robot,d1 Robot,SensorIzquierdo) Robot,Avanzar1 Robot,Vuelta))

@@ -1,0 +1,4 @@
+Invoking command in '/home/monica/ros2_brazoPG/build/arlo_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake --build /home/monica/ros2_brazoPG/build/arlo_interfaces -- -j2 -l2
+Invoked command in '/home/monica/ros2_brazoPG/build/arlo_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake --build /home/monica/ros2_brazoPG/build/arlo_interfaces -- -j2 -l2
+Invoking command in '/home/monica/ros2_brazoPG/build/arlo_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake --install /home/monica/ros2_brazoPG/build/arlo_interfaces
+Invoked command in '/home/monica/ros2_brazoPG/build/arlo_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/monica/ros2_ws/install/modulos:/opt/ros/iron /usr/bin/cmake --install /home/monica/ros2_brazoPG/build/arlo_interfaces

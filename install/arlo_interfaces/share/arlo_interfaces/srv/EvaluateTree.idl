@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from arlo_interfaces/srv/EvaluateTree.srv
+// generated code does not contain a copyright notice
+
+
+module arlo_interfaces {
+  module srv {
+    typedef double double__32[32];
+    struct EvaluateTree_Request {
+      double__32 sensor_values;
+
+      int64 tree_index;
+    };
+    typedef double double__2[2];
+    struct EvaluateTree_Response {
+      double__2 actuator_values;
+    };
+  };
+};

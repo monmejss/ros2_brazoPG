@@ -1,0 +1,254 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.0.7 (/opt/ros/iron/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+-- Found robot_state_publisher: 3.2.1 (/opt/ros/iron/share/robot_state_publisher/cmake)
+-- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found eigen3_cmake_module: 0.2.2 (/opt/ros/iron/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 7.1.4 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/iron/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found gazebo_ros: 3.7.0 (/opt/ros/iron/share/gazebo_ros/cmake)
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+-- Checking for module 'bullet>=2.82'
+--   Found bullet, version 3.05
+-- Found fcl: /usr/include (found suitable version "0.7.0", minimum required is "0.5.0") 
+-- Found assimp: /usr/include (found version "5.2.0") 
+-- Found DART: /usr/include (Required is at least version "6.6") found components: dart 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.40.0") found components: thread system filesystem program_options regex iostreams date_time 
+-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+-- Looking for ignition-math6 -- found version 6.15.1
+-- Searching for dependencies of ignition-math6
+-- Looking for OGRE...
+-- OGRE_PREFIX_WATCH changed.
+-- Checking for module 'OGRE'
+--   Found OGRE, version 1.9.0
+-- Found Ogre Ghadamon (1.9.0)
+-- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so
+-- Looking for OGRE_Paging...
+-- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so
+-- Looking for OGRE_Terrain...
+-- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+-- Looking for OGRE_Property...
+-- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so
+-- Looking for OGRE_RTShaderSystem...
+-- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so
+-- Looking for OGRE_Volume...
+-- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so
+-- Looking for OGRE_Overlay...
+-- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so
+-- Looking for ignition-math6 -- found version 6.15.1
+-- Looking for ignition-transport8 -- found version 8.2.1
+-- Searching for dependencies of ignition-transport8
+-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") 
+-- Config-file not installed for ZeroMQ -- checking for pkg-config
+-- Checking for module 'libzmq >= 4'
+--   Found libzmq , version 4.3.4
+-- Found ZeroMQ: TRUE (Required is at least version "4") 
+-- Checking for module 'uuid'
+--   Found uuid, version 2.37.2
+-- Found UUID: TRUE  
+-- Looking for ignition-msgs5 -- found version 5.8.1
+-- Searching for dependencies of ignition-msgs5
+-- Looking for ignition-math6 -- found version 6.15.1
+-- Checking for module 'tinyxml2'
+--   Found tinyxml2, version 9.0.0
+-- Looking for ignition-msgs5 -- found version 5.8.1
+-- Looking for ignition-common3 -- found version 3.14.0
+-- Searching for dependencies of ignition-common3
+-- Looking for dlfcn.h - found
+-- Looking for libdl - found
+-- Found DL: TRUE  
+-- Found tinyobjloader: /usr/lib/x86_64-linux-gnu/cmake/tinyobjloader/tinyobjloader-config.cmake (found version "2.0.0") 
+-- Searching for <ignition-common3> component [graphics]
+-- Looking for ignition-common3-graphics -- found version 3.14.0
+-- Searching for dependencies of ignition-common3-graphics
+-- Looking for ignition-math6 -- found version 6.15.1
+-- Looking for ignition-fuel_tools4 -- found version 4.4.0
+-- Searching for dependencies of ignition-fuel_tools4
+-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+-- Checking for module 'jsoncpp'
+--   Found jsoncpp, version 1.9.5
+-- Found JSONCPP: TRUE  
+-- Checking for module 'libzip'
+--   Found libzip, version 1.7.3
+-- Found ZIP: TRUE  
+-- Looking for ignition-common3 -- found version 3.14.0
+-- Looking for ignition-math6 -- found version 6.15.1
+-- Looking for ignition-msgs5 -- found version 5.8.1
+-- Gazebo version: 11.10
+-- Checking for module 'tbb'
+--   Found tbb, version 2021.5.0
+-- Found controller_manager: 3.30.0 (/opt/ros/iron/share/controller_manager/cmake)
+-- Found ros2_controllers: 3.28.0 (/opt/ros/iron/share/ros2_controllers/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/monica/ros2_brazoPG/build/arlo_mejorado
+-- Install configuration: ""
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/launch
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/launch/xolobot_arm_control.launch.py
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/worlds
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/worlds/coca_levitando.world
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/.directory
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/xolobot.urdf
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/model.config
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/textures
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/textures/metal.material
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/textures/images
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/textures/images/metal-rosa.jpg
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/textures/images/metal-hoyos.jpg
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/textures/images/blue-metal.jpg
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/textures/images/rose-gold.jpg
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/textures/images/piso-metal-barras.jpg
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/textures/images/piso-metal-blanco.jpg
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/textures/model.config
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/textures/xolobot.material
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/xolobot_arm.sdf
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/pulgar_2.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/antebrazo_mano_izq_2.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/biceps_juntos.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/biceps_der.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/biceps_izq.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/banda.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/biceps_juntos_nuevo.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/antebrazo_mano_izqprueba.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/antebrazo_mano_izq_bak.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/mono.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/hombro_alto.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/codo_izq_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/hombro_alto_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/model.config
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/antebrazo_mano_izq.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/codo_izq.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/biceps_izq_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/pulgar_2.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/biceps_juntos.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/biceps_der.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/biceps_izq.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/biceps_juntos_nuevo.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/hombro_alto.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/antebrazo_mano_izq.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/codo_izq.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/hombro_bajo.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_indice.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_cordial_1.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_menique_1.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_indice_2.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_cordial.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_menique_2.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_cordial_2.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_indice_1.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_menique.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_menique_1.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_menique_2.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_anular_1.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_menique_3.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_cordial_3.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/mano_completa.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_menique.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_menique_2.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_anular.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_menique_3.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_menique_3.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_menique_1.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_anular.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_indice.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/mano_completa.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_anular_3.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_anular_2.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_cordial.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/dedos/dedo_indice_3.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/pulgar_1_izq.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/backup/pulgar_3.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/hombro_bajo.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/pulgar_2.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/pulgar_1_izq_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique_3_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_indice.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_cordial_3_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/pulgar_3_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_cordial_1.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique_2_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique_1.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_indice_2.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_indice_3_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_cordial.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique_2.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_cordial_2.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_indice_1.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_anular_1_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique_1.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique_2.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_anular_1.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_indice_1_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique_1_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique_3.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_anular_3_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_cordial_1_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_cordial_3.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/pulgar_1_izq.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/mano_completa.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique_2.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_indice_2_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_anular.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_cordial_2_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique_3.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/pulgar_3.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique_3.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_menique_1.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_anular.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_indice.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/mano_completa.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_anular_3.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_anular_2.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_cordial.blend1
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/pulgar_2_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_anular_2_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/dedos/dedo_indice_3.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/pulgar_1_izq.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/codo_izq_tuercas.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/hombro_bajo_colision.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/pulgar_3.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/banda_terminada.blend
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/arlodrive/meshes/palma.dae
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/models/.directory
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/ament_index/resource_index/package_run_dependencies/arlo_mejorado
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/ament_index/resource_index/parent_prefix_path/arlo_mejorado
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/environment/ament_prefix_path.sh
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/environment/ament_prefix_path.dsv
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/environment/path.sh
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/environment/path.dsv
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/local_setup.bash
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/local_setup.sh
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/local_setup.zsh
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/local_setup.dsv
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/package.dsv
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/ament_index/resource_index/packages/arlo_mejorado
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/cmake/arlo_mejoradoConfig.cmake
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/cmake/arlo_mejoradoConfig-version.cmake
+-- Installing: /home/monica/ros2_brazoPG/install/arlo_mejorado/share/arlo_mejorado/package.xml

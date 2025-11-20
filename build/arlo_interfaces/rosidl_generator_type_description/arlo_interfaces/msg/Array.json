@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "arlo_interfaces/msg/Array",
+      "fields": [
+        {
+          "name": "sensor_values_array",
+          "type": {
+            "type_id": 59,
+            "capacity": 32,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "actuator_values_array",
+          "type": {
+            "type_id": 59,
+            "capacity": 2,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "arlo_interfaces/msg/Array",
+      "hash_string": "RIHS01_26e4c8eb82c9664ca07709ee70e79ebbac8c89783a04e1b8e34019807c9436cb"
+    }
+  ]
+}

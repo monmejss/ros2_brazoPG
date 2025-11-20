@@ -1,0 +1,27 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from arlo_nn_controller/srv/EvaluateDriver.srv
+// generated code does not contain a copyright notice
+
+
+module arlo_nn_controller {
+  module srv {
+    struct EvaluateDriver_Request {
+      int64 maxtime;
+
+      int64 tree_index;
+    };
+    struct EvaluateDriver_Response {
+      double time;
+
+      double dist2go;
+
+      double average_distance;
+
+      double box_distance;
+
+      double damage;
+
+      double energy;
+    };
+  };
+};

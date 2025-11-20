@@ -1,0 +1,4 @@
+source;share/arlo_mejorado/local_setup.bash
+source;share/arlo_mejorado/local_setup.dsv
+source;share/arlo_mejorado/local_setup.sh
+source;share/arlo_mejorado/local_setup.zsh
