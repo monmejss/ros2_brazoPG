@@ -1,5 +1,0 @@
-Robot,Parar=3
-Robot,Avanzar1=4
-Robot,Avanzar2=5
-Robot,Avanzar3=6
-Robot,Vuelta=7

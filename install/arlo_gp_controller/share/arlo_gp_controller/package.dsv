@@ -1,6 +1,0 @@
-source;share/arlo_gp_controller/hook/pythonpath.ps1
-source;share/arlo_gp_controller/hook/pythonpath.dsv
-source;share/arlo_gp_controller/hook/pythonpath.sh
-source;share/arlo_gp_controller/hook/ament_prefix_path.ps1
-source;share/arlo_gp_controller/hook/ament_prefix_path.dsv
-source;share/arlo_gp_controller/hook/ament_prefix_path.sh

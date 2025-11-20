@@ -1,8 +1,0 @@
-{
-  "package_name": "arlo_interfaces",
-  "non_idl_tuples": [
-    "/home/monica/ros2_brazoPG/src/arlo_interfaces:srv/EvaluateTree.srv",
-    "/home/monica/ros2_brazoPG/src/arlo_interfaces:srv/ActuatorValuesService.srv",
-    "/home/monica/ros2_brazoPG/src/arlo_interfaces:msg/Array.msg"
-  ]
-}

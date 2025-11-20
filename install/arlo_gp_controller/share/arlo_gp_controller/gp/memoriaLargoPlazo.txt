@@ -1,3 +1,0 @@
-Robot,d1=0.5
-Robot,d2=1.2
-Robot,d3=2

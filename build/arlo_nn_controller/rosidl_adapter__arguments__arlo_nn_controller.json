@@ -1,7 +1,0 @@
-{
-  "package_name": "arlo_nn_controller",
-  "non_idl_tuples": [
-    "/home/monica/ros2_brazoPG/src/arlo_nn_controller:msg/Num.msg",
-    "/home/monica/ros2_brazoPG/src/arlo_nn_controller:srv/EvaluateDriver.srv"
-  ]
-}

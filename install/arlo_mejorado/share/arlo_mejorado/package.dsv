@@ -1,8 +1,0 @@
-source;share/arlo_mejorado/hook/cmake_prefix_path.ps1
-source;share/arlo_mejorado/hook/cmake_prefix_path.dsv
-source;share/arlo_mejorado/hook/cmake_prefix_path.sh
-source;share/arlo_mejorado/local_setup.bash
-source;share/arlo_mejorado/local_setup.dsv
-source;share/arlo_mejorado/local_setup.ps1
-source;share/arlo_mejorado/local_setup.sh
-source;share/arlo_mejorado/local_setup.zsh

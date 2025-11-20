@@ -1,7 +1,0 @@
-
-float64 time
-float64 dist2go
-float64 average_distance
-float64 box_distance
-float64 damage
-float64 energy

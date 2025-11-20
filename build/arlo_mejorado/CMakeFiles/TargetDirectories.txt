@@ -1,9 +1,0 @@
-/home/monica/ros2_brazoPG/build/arlo_mejorado/CMakeFiles/uninstall.dir
-/home/monica/ros2_brazoPG/build/arlo_mejorado/CMakeFiles/arlo_mejorado_uninstall.dir
-/home/monica/ros2_brazoPG/build/arlo_mejorado/CMakeFiles/test.dir
-/home/monica/ros2_brazoPG/build/arlo_mejorado/CMakeFiles/edit_cache.dir
-/home/monica/ros2_brazoPG/build/arlo_mejorado/CMakeFiles/rebuild_cache.dir
-/home/monica/ros2_brazoPG/build/arlo_mejorado/CMakeFiles/list_install_components.dir
-/home/monica/ros2_brazoPG/build/arlo_mejorado/CMakeFiles/install.dir
-/home/monica/ros2_brazoPG/build/arlo_mejorado/CMakeFiles/install/local.dir
-/home/monica/ros2_brazoPG/build/arlo_mejorado/CMakeFiles/install/strip.dir

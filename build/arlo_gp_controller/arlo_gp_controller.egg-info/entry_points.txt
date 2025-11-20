@@ -1,7 +1,0 @@
-[console_scripts]
-corriente_dorsal = arlo_gp_controller.corrienteDorsal:main
-cortezaParietal = arlo_gp_controller.cortezaParietal:main
-cortezaSomatosensorial = arlo_gp_controller.cortezaSomatosensorial:main
-main = arlo_gp_controller.main:main
-runBest = arlo_gp_controller.gp.runBest:main
-
