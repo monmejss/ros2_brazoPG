@@ -22,8 +22,25 @@ import os
 
 from std_msgs.msg import Float32MultiArray
 
-# funcion para leer archivo de MP - MLP
-def leer_memorias(nombreArchivo):
+# funcion para leer MP (bumpers)
+def leer_memoriaP(nombreArchivo):
+    rutaDirectorio = get_package_share_directory('arlo_gp_controller')
+    rutaArchivo = os.path.join(rutaDirectorio, 'gp', nombreArchivo)
+    # lista de bumpers
+    bumpers = []
+    
+    with open(rutaArchivo) as f:
+        for line in f:
+            # para quitar espacios, saltos de linea
+            line = line.strip()
+            # si no esta vacia y si hay un =
+            if line:
+                bumpers.append(line)
+    return bumpers
+    
+
+# funcion para leer archivo de MLP
+def leer_memoriaLP(nombreArchivo):
     rutaDirectorio = get_package_share_directory('arlo_gp_controller')
     rutaArchivo = os.path.join(rutaDirectorio, 'gp', nombreArchivo)
 
@@ -60,12 +77,9 @@ def leer_memoriaM(nombreArchivo):
                 
                 # cuando sea por ejemplo 3,0.0, 0.0
                 if len(valorSeparado) == 3:
-                    velocidadLineal = float(valorSeparado[1])
-                    velocidadAngular = float(valorSeparado[2])
-                    diccionarioReaccion[accion] = [velocidadLineal, velocidadAngular]
-                # cuando sea vuelta
-                elif len(valorSeparado) == 2:
-                    diccionarioReaccion[accion] = valorSeparado[1]
+                    articulacion1 = float(valorSeparado[1])
+                    articulacion2 = float(valorSeparado[2])
+                    diccionarioReaccion[accion] = [articulacion1, articulacion2]
                 else:
                     print("Linea invalida")
                 
@@ -93,25 +107,22 @@ class Tree:
 
     def __init__(self)->Tree:
         self.reaccion = {}
-        # leer archivos de memoria perceptiva y LP
+        # leer archivos
+        # reacciones se guardan en self.reaccion
         memoriaMotora, self.reaccion = leer_memoriaM("memoriaMotora.txt")
-        memoriaPerceptiva = leer_memorias("memoriaPerceptiva.txt")
-        memoriaLargoPlazo = leer_memorias("memoriaLargoPlazo.txt")
+        
+        # en self.sensores lista de nombres de bumper
+        self.sensores = leer_memoriaP("memoriaPerceptiva.txt")
+        memoriaLargoPlazo= leer_memoriaLP("memoriaLargoPlazo.txt")
                 
-        # para la info de los txt
+        # agrega clave/valor de las memorias en symTable
+        # se cargan una sola vez
         self.symTable.update(memoriaMotora)
         self.symTable.update(memoriaLargoPlazo)
-        self.symTable.update(memoriaPerceptiva)
         
-        # nuevo dicccionario para guardar los indices de sensores
-        self.indices={}
-        for claveSen, valorSen in self.symTable.items():
-            if claveSen.startswith("Robot,Sensor"):
-                try:
-                    # si es flotantes se guarda como int
-                    self.indices[claveSen] = int(valorSen)
-                except Exception:
-                    self.indices[claveSen]=-1
+        for nombre_bumper in self.sensores:
+            self.symTable[nombre_bumper] = 0.0
+        
         
         #ROS atributes
         # server = rospy.Service('actuator_values',ActuatorValuesService, handler=self.handleEvaluateTree)
@@ -120,11 +131,13 @@ class Tree:
         #Lista de simbolos de la regla
         S = RuleSet("S")
         S.addNonTerminalRule(Rule("SiOtro", ("ER", "S", "S") ) )
-        S.addTerminalRule(Rule("Robot,Parar", ("Robot,Parar")))
-        S.addTerminalRule(Rule("Robot,Avanzar1", ("Robot,Avanzar1")))
-        # S.addTerminalRule(Rule("Avanzar2", ("Avanzar2")))
-        # S.addTerminalRule(Rule("Avanzar3", ("Avanzar3")))
-        S.addTerminalRule(Rule("Robot,Vuelta", ("Robot,Vuelta")))
+        S.addTerminalRule(Rule("Brazo,Parar", ("Brazo,Parar")))
+        S.addTerminalRule(Rule("Brazo,Avanzar1", ("Brazo,Avanzar1")))
+        S.addTerminalRule(Rule("Brazo,Avanzar2", ("Brazo,Avanzar2")))
+        S.addTerminalRule(Rule("Brazo,Avanzar3", ("Brazo,Avanzar3")))
+        S.addTerminalRule(Rule("Brazo,VueltaDerecha", ("Brazo,VueltaDerecha")))
+        S.addTerminalRule(Rule("Brazo,VueltaIzquierda", ("Brazo,VueltaIzquierda")))
+
         self.rules["S"]= S
 
         #reglas de expresion relacional
@@ -135,12 +148,11 @@ class Tree:
 
         #Reglas para expresiones
         E = RuleSet("E")
-        E.addTerminalRule(Rule("Robot,d1", ("Robot,d1")))
-        # E.addTerminalRule(Rule("d2", ("d2")))
-        # E.addTerminalRule(Rule("d3", ("d3")))
-        E.addTerminalRule(Rule("Robot,SensorFrente", ("Robot,SensorFrente")))
-        E.addTerminalRule(Rule("Robot,SensorDerecho", ("Robot,SensorDerecho")))
-        E.addTerminalRule(Rule("Robot,SensorIzquierdo", ("Robot,SensorIzquierdo")))
+        E.addTerminalRule(Rule("Brazo,d1", ("Brazo,d1")))
+        E.addTerminalRule(Rule("Brazo,d2", ("Brazo,d2")))
+        E.addTerminalRule(Rule("Brazo,d3", ("Brazo,d3")))
+        E.addTerminalRule(Rule("Brazo,Bumper_Palma", ("Brazo,Bumper_Palma")))
+        E.addTerminalRule(Rule("Brazo,Bumper_Antebrazo", ("Brazo,Bumper_Antebrazo")))
         self.rules["E"]=E
 
         # self.symTable["d1"] = D1
@@ -241,18 +253,14 @@ class Tree:
         self.depth = maxDepth
         return self.root
         
-    def evaluateTree(self,sensorValues) -> float:
-        # para que funcione con lo que lea de memoriaPerceptiva
-        for clave, valor in self.indices.items():
-            if valor<0 or valor>=len(sensorValues):
-                lectura= float('inf')
-            else:
-                lectura=sensorValues[valor]
-
-            # actualiza valores del diccionario
-            self.symTable[clave] = lectura
-        
+    def evaluateTree(self, bumper_palma:bool, bumper_antebrazo:bool):
         print("\n--- Evaluando árbol ---")
+        
+        # para que lea del archivo los nombres de los bumpers
+        valores_bumpers = [bumper_palma, bumper_antebrazo]
+        for nombre_bumper, valor_bool in zip(self.sensores,valores_bumpers):
+            self.symTable[nombre_bumper] = 1.0 if valor_bool else 0.0
+        
         resp = self.__evaluateTree(self.root)
         print("Respuesta del árbol:", resp)
         
@@ -261,19 +269,11 @@ class Tree:
             accion = self.reaccion[resp]
             
             if isinstance(accion, list):
-                # lista de velocidades
+                # lista de posiciones
                 self.reaction = accion
             elif isinstance(accion, str):
-                # si es texto (FuncionTurnLeft)
-                if accion == "TURNLEFT":
-                    print("Vuelta")
-                    if self.ros_node is None:
-                        print("ERROR: self.ros_node es None dentro de evaluateTree")
-                    else:
-                        turnLeft(self.ros_node)
-                    print("fin")
-                    self.reaction = [0.0, 0.0]
-            else:
+                self.reaction = [0.0, 0.0]
+            else: 
                 self.reaction = [0.0, 0.0]
         else:
             self.reaction = [0.0, 0.0]

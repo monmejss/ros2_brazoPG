@@ -1,5 +1,6 @@
-Robot,Parar=4,0.0,0.0
-Robot,Avanzar1=5,0.4,0.0
-Robot,Avanzar2=6,0.5,0.0
-Robot,Avanzar3=7,0.7,0.0
-Robot,Vuelta=8,TURNLEFT
+Brazo,Parar=4,0.0,0.0
+Brazo,Avanzar1=5,-3.1416,1.5708
+Brazo,Avanzar2=6,-1.5708,1.5708
+Brazo,Avanzar3=7,-0.7854,1.5708
+Brazo,VueltaDerecha=8,1.5708,1.5708
+Brazo,VueltaIzquierda=9,-1.5708,-1.5708
