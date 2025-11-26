@@ -18,6 +18,7 @@ SimulationController::SimulationController(double maxSTime, int tRate)
       maxSimTime(maxSTime),
       ticsRate(tRate),
       actuatorValues(NUM_ACTUATORS, 0.0)
+      colisionDetectada(false)
 {
 
    // Para que use sim_time
@@ -37,7 +38,10 @@ SimulationController::SimulationController(double maxSTime, int tRate)
       }
    }
 
-   sensorValues.resize(NUM_RAYS * NUM_SONARS);
+   // inicializar sensores (tamaño, valor)
+   sensorValues.assign(NUM_SENSORES, 0.0);
+   sensorValues.assign(NUM_ACTUADORES, 0.0);
+
 
    prev_x = 0;
    prev_y = 0;

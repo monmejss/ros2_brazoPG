@@ -14,6 +14,12 @@
 #include <geometry_msgs/msg/twist.hpp>
 #include <nav_msgs/msg/odometry.hpp>
 #include <rosgraph_msgs/msg/clock.hpp>
+
+// nuevas (estaban en el archivo del brazo sin PG)
+#include "gazebo_msgs/msg/contacts_state.hpp"
+#include "trajectory_msgs/msg/joint_trajectory.hpp"
+#include "trajectory_msgs/msg/joint_trajectory_point.hpp"
+
 #include <sensor_msgs/msg/laser_scan.hpp>
 #include <std_srvs/srv/empty.hpp>
 #include "arlo_nn_controller/srv/evaluate_driver.hpp"
@@ -26,9 +32,10 @@
 #include <chrono>
 
 
-#define NUM_RAYS 32
-#define NUM_SONARS 3
-#define NUM_ACTUATORS 2
+#define NUM_SENSORES 2
+// Dos articulaciones
+#define NUM_ACTUADORES 2
+#define TOTAL_JOINTS 21
 
 using namespace std;
 
@@ -39,21 +46,21 @@ public:
 	virtual ~SimulationController();
 
 	SimulationState startSimulation(int maxtime, int tree_index);
-
-    void checkSonarLeftValues(const sensor_msgs::msg::LaserScan::SharedPtr msg);
-    void checkSonarCenterValues(const sensor_msgs::msg::LaserScan::SharedPtr msg);
-    void checkSonarRightValues(const sensor_msgs::msg::LaserScan::SharedPtr msg);
-    void checkModelPosition(const nav_msgs::msg::Odometry::SharedPtr msg);
-    void checkSimulationTime(const rosgraph_msgs::msg::Clock::SharedPtr msg);
+	void checkSimulationTime(const rosgraph_msgs::msg::Clock::SharedPtr msg);
 	int getNumSensors();
 	int getNumActuators();
-    void actuatorCallback(const std_msgs::msg::Float32MultiArray::SharedPtr array);
 	void evaluateDriver(
 		const std::shared_ptr<arlo_nn_controller::srv::EvaluateDriver::Request> req,
 		std::shared_ptr<arlo_nn_controller::srv::EvaluateDriver::Response> res);
+	
+	// Funcion detectar colision
+	void deteccionColision(const gazebo_msgs::msg::ContactsState::SharedPtr msg);
 
 
 private:
+	// bumper
+	bool colisionDetectada = false;
+
 	double dist2Go(double x, double y);
 	double distance(double x1, double y1, double x2, double y2);
 	SimulationState arloState;
@@ -88,9 +95,17 @@ private:
 	vector<double> actuatorValues;
 	vector<double> sensorValues;
 
+	// trayectoria
+	rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory>::SharedPtr jointTrajectoryPub;
+	rclcpp::Subscription<gazebo_msgs::msg::ContactsState>::SharedPtr suscriptorPalma;
+    rclcpp::Subscription<gazebo_msgs::msg::ContactsState>::SharedPtr suscriptorAntebrazo;
+
 	// para multihilos
 	rclcpp::CallbackGroup::SharedPtr service_mh_;
 	rclcpp::CallbackGroup::SharedPtr client_mh_;
+
+	// construye y publica la trayectoria
+	void publicarTrayectoria();
 };
 
 #endif
