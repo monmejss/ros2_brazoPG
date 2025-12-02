@@ -17,7 +17,7 @@ SimulationController::SimulationController(double maxSTime, int tRate)
       a_scale_(1.0),
       maxSimTime(maxSTime),
       ticsRate(tRate),
-      actuatorValues(NUM_ACTUATORS, 0.0)
+      actuatorValues(NUM_ACTUADORES, 0.0),
       colisionDetectada(false)
 {
 
@@ -40,23 +40,24 @@ SimulationController::SimulationController(double maxSTime, int tRate)
 
    // inicializar sensores (tamaño, valor)
    sensorValues.assign(NUM_SENSORES, 0.0);
-   sensorValues.assign(NUM_ACTUADORES, 0.0);
+   actuatorValues.assign(NUM_ACTUADORES, 0.0);
 
+   // Publicador para trayectoria completa
+   jointTrajectoryPub = this->create_publisher<trajectory_msgs::msg::JointTrajectory>("/joint_trajectory_controller/joint_trajectory", 10);
+   
+   // Suscriptor para bumper palma
+   suscriptorPalma = this ->create_subscription<gazebo_msgs::msg::ContactsState>
+   ("/bumper_states_palma", rclcpp::SensorDataQoS(), [this](const gazebo_msgs::msg::ContactsState::SharedPtr msg) {
+      this->deteccionColision(0,msg);
+      }
+   );
 
-   prev_x = 0;
-   prev_y = 0;
-   stuck = false;
-   stuckCounter = 0;
-   this->declare_parameter("scale_angular", a_scale_);
-   this->declare_parameter("scale_linear", l_scale_);
-   this->get_parameter("scale_angular", a_scale_);
-   this->get_parameter("scale_linear", l_scale_);
-
-   vel_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
-   // odom con QoS
-   odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
-       "/odom", rclcpp::QoS(rclcpp::KeepLast(10)).best_effort(),
-       std::bind(&SimulationController::checkModelPosition, this, std::placeholders::_1));
+   // Suscriptor para bumper antebrazo
+   suscriptorAntebrazo= this ->create_subscription<gazebo_msgs::msg::ContactsState>
+   ("/bumper_states_antebrazo", rclcpp::SensorDataQoS(), [this](const gazebo_msgs::msg::ContactsState::SharedPtr msg){
+      this -> deteccionColision(1,msg);
+      }
+   );
 
    // clock con QoS
    rclcpp::QoS qos_clock(rclcpp::KeepLast(10));
@@ -64,18 +65,6 @@ SimulationController::SimulationController(double maxSTime, int tRate)
    clock_sub_ = this->create_subscription<rosgraph_msgs::msg::Clock>(
        "/clock", qos_clock,
        std::bind(&SimulationController::checkSimulationTime, this, std::placeholders::_1));
-
-   sonar_l_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
-       "arlo/laser/scan_left", 10,
-       std::bind(&SimulationController::checkSonarLeftValues, this, std::placeholders::_1));
-
-   sonar_c_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
-       "arlo/laser/scan_center", 10,
-       std::bind(&SimulationController::checkSonarCenterValues, this, std::placeholders::_1));
-
-   sonar_r_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
-       "arlo/laser/scan_right", 10,
-       std::bind(&SimulationController::checkSonarRightValues, this, std::placeholders::_1));
 
    // callbacks para que se ejecuten en paralelo (MultiThreadedExecutor)
    service_mh_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
@@ -98,16 +87,13 @@ SimulationController::SimulationController(double maxSTime, int tRate)
    RCLCPP_INFO(this->get_logger(), "SimulationController inicializado");
 }
 
-void SimulationController::actuatorCallback(std_msgs::msg::Float32MultiArray::SharedPtr array)
-{
-   int i = 0;
-   RCLCPP_INFO(this->get_logger(), "I heard:");
 
-   for (auto val : array->data)
-   {
-      actuatorValues[i] = val;
-      std::cout << actuatorValues[i] << std::endl;
-      i++;
+void SimulationController::deteccionColision(int id, const gazebo_msgs::msg::ContactsState::SharedPtr msg){
+   bool hayContacto = !msg->states.empty();
+   sensorValues[id] = hayContacto ? 1.0:0.0;
+   if(hayContacto){
+      colisionDetectada = true;
+      RCLCPP_WARN(this->get_logger(),"¡Colision detectada!");
    }
 }
 
@@ -167,12 +153,12 @@ SimulationState SimulationController::startSimulation(int maxtime, int tree_inde
    rclcpp::sleep_for(std::chrono::seconds(2));
 
    maxSimTime = maxtime;
-   rclcpp::Rate loop_rate(50);
-   linear_ = angular_ = 0;
    arloState.resetState();
    stuckCounter = 0;
-
-   while (rclcpp::ok() && !arloState.hasTimeRunOut && !arloState.finishLineCrossed)
+   colisionDetectada=false;
+   rclcpp::Rate loop_rate(20);
+   
+   while (rclcpp::ok() && !arloState.hasTimeRunOut)
    {
       // RCLCPP_INFO(this->get_logger(), "ROS funciona, tiempo no se acabo, no ha cruzado la meta");
 
@@ -190,9 +176,9 @@ SimulationState SimulationController::startSimulation(int maxtime, int tree_inde
       // Llamada a evaluate_tree
       // RCLCPP_INFO(this->get_logger(), "Paso a la llamada a evaluate_tree");
       auto eval_req = std::make_shared<arlo_interfaces::srv::EvaluateTree::Request>();
-      for (int i = 0; i < NUM_RAYS; i++)
+      for (int i = 0; i < NUM_SENSORES; i++)
       {
-         eval_req->sensor_values[i] = sensorValues[i];
+         eval_req->sensor_values[i] = static_cast<float>(sensorValues[i]);
       }
       eval_req->tree_index = tree_index;
 
@@ -209,43 +195,21 @@ SimulationState SimulationController::startSimulation(int maxtime, int tree_inde
       else
       {
          RCLCPP_ERROR(this->get_logger(), "El servicio evaluate_tree NO RESPONDIO (timeout)");
-         actuatorValues[0] = actuatorValues[1] = 0.0;
+         actuatorValues[0] = 0.0;
+         actuatorValues[1] = 0.0;
+
       }
-
-      // RCLCPP_INFO(this->get_logger(), "Publicar velocidades");
-      linear_ = actuatorValues[0];
-      angular_ = actuatorValues[1];
-      geometry_msgs::msg::Twist twist;
-      twist.angular.z = a_scale_ * angular_;
-      twist.linear.x = l_scale_ * linear_;
-      // RCLCPP_INFO(this->get_logger(), "Twist -> lin: %.3f  ang: %.3f", twist.linear.x, twist.angular.z);
-      vel_pub_->publish(twist);
-
+      //publicar trayectoria de acuerdo a los actuatorValues
+      publicarTrayectoria();
       loop_rate.sleep();
    }
-   cout << "hasTimeRunOut= " << arloState.hasTimeRunOut << "\n";
-   cout << "finishLineCrossed= " << arloState.finishLineCrossed << "\n";
 
-   // RCLCPP_INFO(this->get_logger(), "Salio de: ROS funciona, tiempo no se acabo, no ha cruzado la meta");
-
-   if (arloState.hasTimeRunOut)
-   {
+   if (arloState.hasTimeRunOut){
       arloState.finishTime = 2 * maxSimTime;
-      cout << "currentPosition= " << arloState.currentPosition << "\n";
-      if (arloState.stuck)
-      {
-         RCLCPP_WARN(this->get_logger(), " ---->>> ATASCADO  <<<-----");
-      }
    }
-   else
-   {
+   else{
       arloState.finishTime = arloState.currentTime;
-      arloState.robotEnergy = 100;
    }
-
-   cout << "x = " << arloState.position[0] << ", y = " << arloState.position[1] << endl;
-   cout << "d2Go= " << arloState.distanceToGo << endl;
-   cout << "gas= " << arloState.distanceTravelled << endl;
 
    // Reset final
    auto final_reset = reset_sim_client_->async_send_request(reset_req);
@@ -254,87 +218,39 @@ SimulationState SimulationController::startSimulation(int maxtime, int tree_inde
    return arloState;
 }
 
-void SimulationController::checkSonarLeftValues(sensor_msgs::msg::LaserScan::SharedPtr msg)
-{
-   for (int i = 0; i < msg->ranges.size(); ++i)
-   {
-      sensorValues[i + 0 * NUM_RAYS] = msg->ranges[i]; // 0 para el sensor izq.
-   }
+void SimulationController::publicarTrayectoria(){
+   trajectory_msgs::msg::JointTrajectory jointTrajectoryMsg;
+    jointTrajectoryMsg.joint_names = {"jnt_pecho_hombro", "jnt_hombro_hombro", "jnt_hombro_biceps", 
+        "jnt_biceps_codo", "jnt_codo_antebrazo", "jnt_antebrazo_palma", 
+        "jnt_palma_pulgar_1", "jnt_pulgar_1_2", "jnt_pulgar_2_3", 
+        "jnt_palma_indice_1", "jnt_indice_1_2", "jnt_indice_2_3", 
+        "jnt_palma_cordial_1", "jnt_cordial_1_2", "jnt_cordial_2_3", 
+        "jnt_palma_anular_1", "jnt_anular_1_2", "jnt_anular_2_3", 
+        "jnt_palma_menique_1", "jnt_menique_1_2", "jnt_menique_2_3"};
+
+    trajectory_msgs::msg::JointTrajectoryPoint point;
+    point.positions.resize(TOTAL_JOINTS, 0.0);
+
+    // poner salida salida del GP en la art 2-3 
+    point.positions[2] = actuatorValues[0];
+    point.positions[3] = actuatorValues[1];
+
+   //Mantener brazo a 90°
+    point.positions[4] = -1.5708;
+
+    if(colisionDetectada){
+      //indice (9-10-11)
+      point.positions[9] =0.80;
+      point.positions[10] =0.6109;
+      point.positions[11] =0.6981;
+      
+    }
+
+    point.time_from_start.sec=1;
+    jointTrajectoryMsg.points.push_back(point);
+    jointTrajectoryPub->publish(jointTrajectoryMsg);
 }
 
-void SimulationController::checkSonarCenterValues(sensor_msgs::msg::LaserScan::SharedPtr msg)
-{
-   for (int i = 0; i < msg->ranges.size(); ++i)
-   {
-      sensorValues[i + 1 * NUM_RAYS] = msg->ranges[i]; // 1 para el sensor central.
-   }
-}
-
-void SimulationController::checkSonarRightValues(sensor_msgs::msg::LaserScan::SharedPtr msg)
-{
-   for (int i = 0; i < msg->ranges.size(); ++i)
-   {
-      sensorValues[i + 2 * NUM_RAYS] = msg->ranges[i]; // 2 para el sensor der.
-   }
-}
-
-double SimulationController::dist2Go(double x, double y)
-{
-   double distToGo;
-   if (y < 0.8 && x < 4.7)
-   { // Va en la primera recta
-      distToGo = 18 - x;
-   }
-   else if (y < 6.61)
-   { // Va en la segunda recta
-      distToGo = 18 - (5.25 + y);
-   }
-   else
-   { // Va en la recta final
-      if (x > 0.0)
-         distToGo = x;
-      else
-         distToGo = 0.0;
-   }
-   return distToGo;
-}
-
-double SimulationController::distance(double x1, double y1, double x2, double y2)
-{
-   double sum = (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
-   return sqrt(sum);
-}
-
-void SimulationController::checkModelPosition(const nav_msgs::msg::Odometry::SharedPtr msg)
-{
-   double distanceBefore = arloState.distanceTravelled;
-   arloState.distanceTravelled += distance(prev_x, prev_y,
-                                           msg->pose.pose.position.x,
-                                           msg->pose.pose.position.y);
-
-   if (abs(distanceBefore - arloState.distanceTravelled) < 0.01)
-   {
-      stuckCounter++;
-      if (stuckCounter > 80)
-      {
-         arloState.stuck = true;
-         arloState.hasTimeRunOut = true;
-      }
-   }
-   else
-      stuckCounter = 0;
-
-   prev_x = msg->pose.pose.position.x;
-   prev_y = msg->pose.pose.position.y;
-
-   arloState.currentPosition = msg->pose.pose.position.x;
-   arloState.position[0] = msg->pose.pose.position.x;
-   arloState.position[1] = msg->pose.pose.position.y;
-
-   arloState.distanceToGo = dist2Go(msg->pose.pose.position.x, msg->pose.pose.position.y);
-   if (arloState.distanceToGo <= 0.0)
-      arloState.finishLineCrossed = true;
-}
 
 void SimulationController::checkSimulationTime(const rosgraph_msgs::msg::Clock::SharedPtr msg)
 {
@@ -347,10 +263,10 @@ void SimulationController::checkSimulationTime(const rosgraph_msgs::msg::Clock::
 
 int SimulationController::getNumSensors()
 {
-   return NUM_RAYS * NUM_SONARS;
+   return NUM_SENSORES;
 }
 
 int SimulationController::getNumActuators()
 {
-   return NUM_ACTUATORS;
+   return NUM_ACTUADORES;
 }

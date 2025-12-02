@@ -253,13 +253,12 @@ class Tree:
         self.depth = maxDepth
         return self.root
         
-    def evaluateTree(self, bumper_palma:bool, bumper_antebrazo:bool):
+    def evaluateTree(self, valores_bumpers: list[float]) -> list[float]:
         print("\n--- Evaluando árbol ---")
         
         # para que lea del archivo los nombres de los bumpers
-        valores_bumpers = [bumper_palma, bumper_antebrazo]
         for nombre_bumper, valor_bool in zip(self.sensores,valores_bumpers):
-            self.symTable[nombre_bumper] = 1.0 if valor_bool else 0.0
+            self.symTable[nombre_bumper] = 1.0 if valor_bool > 0.5 else 0.0
         
         resp = self.__evaluateTree(self.root)
         print("Respuesta del árbol:", resp)

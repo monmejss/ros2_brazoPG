@@ -10,6 +10,9 @@ find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(rosgraph_msgs REQUIRED)
 find_package(std_srvs REQUIRED)
+find_package(gazebo_msgs REQUIRED)
+find_package(trajectory_msgs REQUIRED)
+
 
 #find_package(arlo_gp_controller REQUIRED)
 find_package(arlo_interfaces REQUIRED)
@@ -49,6 +52,8 @@ ament_target_dependencies(arlo_nn_controller_node
   std_srvs
   #arlo_gp_controller
   arlo_interfaces
+  gazebo_msgs
+  trajectory_msgs
 )
 
 rosidl_target_interfaces(arlo_nn_controller_node

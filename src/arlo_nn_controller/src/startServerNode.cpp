@@ -15,12 +15,6 @@
 {
     rclcpp::init(argc, argv);
     auto sim = std::make_shared<SimulationController>();
-    int numRays = sim->getNumSensors();
-    int numActuators = sim->getNumActuators();
-
-    std::vector<std::pair<double, double>> outputRanges;
-    outputRanges.push_back(std::make_pair(-0.25, 1.0));
-    outputRanges.push_back(std::make_pair(-0.5, 0.5));
 
     RCLCPP_INFO(sim->get_logger(), "Ready to evaluate Xolobot Drivers...");
     

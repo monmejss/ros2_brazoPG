@@ -9,10 +9,12 @@ from launch_ros.actions import Node
 
 
 def generate_launch_description():
-    package_xolobot_arm = get_package_share_directory('xolobot_arm')
-    world_path = os.path.join(package_xolobot_arm, "worlds", "coca_levitando.world")
-    urdf_path = os.path.join(package_xolobot_arm, "models", "xolobot.urdf")
-    sdf_path = os.path.join(package_xolobot_arm, "models", "xolobot_arm.sdf")
+    arlo_mejorado = get_package_share_directory('arlo_mejorado')
+    world_path = os.path.join(arlo_mejorado, "worlds", "coca_levitando.world")
+    urdf_path = os.path.join(arlo_mejorado, "models", "arlodrive", "xolobot.urdf")
+    sdf_path = os.path.join(arlo_mejorado, "models", "arlodrive", "xolobot_arm.sdf")
+    lata_path = os.path.join(arlo_mejorado, "models", "arlodrive", "lata.sdf")
+    soporte_path = os.path.join(arlo_mejorado, "models", "arlodrive", "soporte.sdf")
 
     # Alinear tiempo de ros con el de la simulacion
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
@@ -48,27 +50,28 @@ def generate_launch_description():
         output='screen'
     )
     
-    #load_effort_controller = ExecuteProcess(
-    #    cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'effort_controller'],
-    #    output='screen'
-    #)
+    lata = Node(
+        package='gazebo_ros',
+        executable='spawn_entity.py',
+        name='spawn_lata',
+        arguments=['-file', lata_path, '-entity', 'coke_can'],
+        output='screen'
+    )
     
-    #mod_occipital = Node(
-    #    package='modulos',
-    #    executable='modulo_occipital',
-    #    output='screen'
-    #)
-    
-    #retraso_mod_occipital = TimerAction(
-    #    period=6.0,
-    #    actions=[mod_occipital]
-    #)
+    soporte = Node(
+        package='gazebo_ros',
+        executable='spawn_entity.py',
+        name='spawn_soporte',
+        arguments=['-file', soporte_path, '-entity', 'soporte'],
+        output='screen'
+    )
+
 
     return LaunchDescription([
         gazebo,
         robot_state_publisher,
         spawn_model,
         load_trajectory_controller,
-        #load_effort_controller
-        #retraso_mod_occipital
+        lata,
+        soporte 
     ])

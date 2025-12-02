@@ -16,9 +16,10 @@
 #include <rosgraph_msgs/msg/clock.hpp>
 
 // nuevas (estaban en el archivo del brazo sin PG)
-#include "gazebo_msgs/msg/contacts_state.hpp"
 #include "trajectory_msgs/msg/joint_trajectory.hpp"
 #include "trajectory_msgs/msg/joint_trajectory_point.hpp"
+#include "gazebo_msgs/msg/contacts_state.hpp"
+
 
 #include <sensor_msgs/msg/laser_scan.hpp>
 #include <std_srvs/srv/empty.hpp>
@@ -54,7 +55,7 @@ public:
 		std::shared_ptr<arlo_nn_controller::srv::EvaluateDriver::Response> res);
 	
 	// Funcion detectar colision
-	void deteccionColision(const gazebo_msgs::msg::ContactsState::SharedPtr msg);
+	void deteccionColision(int id, const gazebo_msgs::msg::ContactsState::SharedPtr msg);
 
 
 private:
