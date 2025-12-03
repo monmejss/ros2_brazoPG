@@ -255,27 +255,48 @@ class Tree:
         
     def evaluateTree(self, valores_bumpers: list[float]) -> list[float]:
         print("\n--- Evaluando árbol ---")
+        print("\n Valores de bumpers: ", valores_bumpers)
+        print("\nSensores configurados:", self.sensores)
         
         # para que lea del archivo los nombres de los bumpers
         for nombre_bumper, valor_bool in zip(self.sensores,valores_bumpers):
             self.symTable[nombre_bumper] = 1.0 if valor_bool > 0.5 else 0.0
-        
+            print( f" {nombre_bumper} = {self.symTable[nombre_bumper]} (Valor: {valor_bool})")
+            
         resp = self.__evaluateTree(self.root)
         print("Respuesta del árbol:", resp)
+        
+        #verificar contacto
+        bumper_palma = self.symTable["Brazo,Bumper_Palma"]
+        bumper_ante = self.symTable["Brazo,Bumper_Antebrazo"]
+        bumper_activo = (bumper_palma > 0.5) or (bumper_ante > 0.5)
+        
+        print("Bumper Activo", bumper_activo)
+        
+        codigo_parar = self.symTable["Brazo,Parar"] 
+        codigo_avanzar = self.symTable["Brazo,Avanzar1"] 
+        if(not bumper_activo) and (resp == codigo_parar):
+            print("Arbol pidio PARAR - Cambia a AVANZAR1")
+            resp = codigo_avanzar    
         
         # si resp(numero) coincide con alguna de la MM
         if resp in self.reaccion:
             accion = self.reaccion[resp]
+
             
             if isinstance(accion, list):
                 # lista de posiciones
                 self.reaction = accion
             elif isinstance(accion, str):
+                print("Accion es string, se regresa [0.0, 0.0]")
                 self.reaction = [0.0, 0.0]
-            else: 
+            else:
+                print("Tipo de accion no esperado, se regresa [0.0, 0.0]")
                 self.reaction = [0.0, 0.0]
         else:
+            print("resp NO esta en self.reaccion, regresando [0.0, 0.0]")
             self.reaction = [0.0, 0.0]
+        print("Reaccion (2-3): ", self.reaction)
         return self.reaction
     
     def showTree(self, spaces=None):

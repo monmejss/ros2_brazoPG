@@ -40,14 +40,17 @@ def main():
                 individual = gp.population[request.tree_index]
 
             individual.setRosNode(node)
-            actuatorValues = individual.evaluateTree(request.sensor_values)
+            valores_bumpers=[float(request.sensor_values[0]),float(request.sensor_values[1]),]
+            actuatorValues = individual.evaluateTree(valores_bumpers)
             #print(f" Valores del actuador: {actuatorValues}")
-            response.actuator_values = list(actuatorValues)
+            response.actuator_values = [float(actuatorValues[0]), float(actuatorValues[1])]
+            node.get_logger().info(f"Valores enviados: Actuador0={response.actuator_values[0]: .4f}, Actuador1={response.actuator_values[1]: .4f}")
             return response
         
         except Exception as e:
             node.get_logger().error(f"Excepción en handleEvaluateTree: {e}")
-            response.actuator_values = [0.0, 0.0]
+            response.actuator_values[0] = 0.0
+            response.actuator_values[1] = 0.0
             return response
 
     # servidor del servicio evaluate_tree

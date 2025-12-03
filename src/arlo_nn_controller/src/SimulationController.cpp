@@ -107,11 +107,16 @@ void SimulationController::evaluateDriver(
 
    startSimulation(req->maxtime, req->tree_index);
 
+   // para el fitness
+   // cuanto tarda en llegar
    res->time = arloState.finishTime;
+   // que tan lejos queda de la lata
    res->dist2go = arloState.distanceToGo;
    // Aparece ya cuando termina de evaluar todo
    RCLCPP_INFO(this->get_logger(), "[C++] Enviando respuesta dist2go=%f", res->dist2go);
+   // penalizacion por moverse despues de colision
    res->damage = arloState.robotDamage;
+   // recompensa por no moverse despues de colision
    res->energy = arloState.robotEnergy;
 }
 
@@ -157,6 +162,11 @@ SimulationState SimulationController::startSimulation(int maxtime, int tree_inde
    stuckCounter = 0;
    colisionDetectada=false;
    rclcpp::Rate loop_rate(20);
+
+   arloState.robotDamage = 0.0;
+   arloState.robotEnergy = 0.0;
+   // paso de tiempo
+   const double dt= 1.0/20.0;
    
    while (rclcpp::ok() && !arloState.hasTimeRunOut)
    {
@@ -190,7 +200,7 @@ SimulationState SimulationController::startSimulation(int maxtime, int tree_inde
          auto response = eval_future.get();
          actuatorValues[0] = response->actuator_values[0];
          actuatorValues[1] = response->actuator_values[1];
-         // RCLCPP_WARN(this->get_logger(), "El servicio evaluate_tree SI RESPONDIO");
+         RCLCPP_INFO(this->get_logger(), "Actuador0: %.3f, Actuador1: %.3f, SensorPalma: %.1f, SensorAntebrazo: %.1f");
       }
       else
       {
@@ -199,11 +209,32 @@ SimulationState SimulationController::startSimulation(int maxtime, int tree_inde
          actuatorValues[1] = 0.0;
 
       }
+
+      // daño y energia
+      // hay contacto
+      bool bumperDetectado = (sensorValues[0] > 0.5) || (sensorValues[1] > 0.5);
+
+      if(bumperDetectado){
+         //magnitud de movimiento
+         double movimiento = std::fabs(actuatorValues[0]) + std::fabs(actuatorValues[1]);
+         
+         if(movimiento > 1e-3){
+            //penalisar daño 
+            arloState.robotDamage += dt;
+         } else {
+            //recompensa (al tener contacto)
+            arloState.robotEnergy += dt;
+         }
+      }
       //publicar trayectoria de acuerdo a los actuatorValues
       publicarTrayectoria();
       loop_rate.sleep();
    }
 
+   bool bumperContacto = (sensorValues[0] > 0.5) || (sensorValues[1] > 0.5);
+   arloState.distanceToGo = bumperContacto ? 0.0 : 1.0; 
+   
+   // para el tiempo (fitness)
    if (arloState.hasTimeRunOut){
       arloState.finishTime = 2 * maxSimTime;
    }
@@ -246,7 +277,9 @@ void SimulationController::publicarTrayectoria(){
       
     }
 
-    point.time_from_start.sec=1;
+    point.time_from_start.sec = 0;
+    point.time_from_start.nanosec = 200000000;  // 0.2 s
+    //point.time_from_start.sec=1;
     jointTrajectoryMsg.points.push_back(point);
     jointTrajectoryPub->publish(jointTrajectoryMsg);
 }
